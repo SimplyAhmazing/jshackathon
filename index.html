@@ -28,10 +28,10 @@
 		 <div class="six columns centered">
 		 	<div class="form-wrapper">
 				<h3>Enter a Reservation</h3>
-				<form>
-					<input type="text" name="name" placeholder="Name" />
-					<input type="tel" name="phone" placeholder="Phone Number" />
-					<input type="text" name="number" placeholder="Number in Party" />
+				<form id="resform">
+					<input id="namefield"  type="text" name="name" placeholder="Name" />
+					<input id="phonefield" type="tel" name="phone" placeholder="Phone Number" />
+					<input id="numberfield" type="text" name="number" placeholder="Number in Party" />
 					<button type="submit" class="button radius medium eight columns offset-by-four">Add Reservation</button>
 				</form>
 			</div>	
@@ -40,42 +40,17 @@
 <!-- 	############## Pending Reservations ##############  -->
 		<div id="pending-reservations" class="row">
 			<h2>Pending Reservations</h2>	
-			<div class="four columns">
-				<div class="pending-slot">
-					<div class="number-in-party">8</div>
-					<div class="contact">
-						<div class="name-in-party">Bruce Wayne</div>
-						<div class="phone-number">678-555-9081</div>
-					</div>
-				</div>	
-			</div>
+            <script type='text/template' id="resView">
 			<div class="four columns">
 				<div class="pending-slot selected"> <!-- Class "selected" indicates selected state -->
-					<div class="number-in-party">2</div>
+					<div class="number-in-party"><%- count %></div>
 					<div class="contact">
-						<div class="name-in-party">Selina Kyle</div>
-						<div class="phone-number">706-555-4891</div>
+						<div class="name-in-party"><%- name %></div>
+						<div class="phone-number"><%- phone %></div>
 					</div>
 				</div>
 			</div>
-			<div class="four columns">
-				<div class="pending-slot">
-					<div class="number-in-party">4</div>
-					<div class="contact">
-						<div class="name-in-party">Matt Hagen</div>
-						<div class="phone-number">678-555-5001</div>
-					</div>
-				</div>
-			</div>
-			<div class="four columns">
-				<div class="pending-slot">
-					<div class="number-in-party">1</div>
-					<div class="contact">
-						<div class="name-in-party">Temple Fugate</div>
-						<div class="phone-number">404-555-6153</div>
-					</div>
-				</div>
-			</div>
+            </script>
 		</div>
 
 <!-- 	############## Confirmed Reservations ##############  -->		
